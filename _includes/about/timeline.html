@@ -1,10 +1,5 @@
 <div class="col mt-4">
   <div class="timeline-body bg-themed">
-    {% if site.resume_in_timeline %}
-    <div align="center">
-      <a class="markdown-body" href={{ site.remote_resume_link }} target="_blank"><i class="fas fa-file" data-fa-transform="shrink-2 up-0.8"></i> Resume</a>
-    </div>
-    {% endif %}
     {% for item in site.data.timeline %}
       <div class="timeline-item">
         <div class="content">
@@ -14,5 +9,10 @@
         </div>
       </div>
     {% endfor %}
+    {% if site.resume_in_timeline %}
+    <div align="center">
+      <a class="markdown-body" href={{ site.remote_resume_link }} target="_blank"><i class="fas fa-file" data-fa-transform="shrink-2 up-0.8"></i> Resume</a>
+    </div>
+    {% endif %}
   </div>
 </div>
