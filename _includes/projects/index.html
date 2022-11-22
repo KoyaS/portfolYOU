@@ -19,9 +19,9 @@
         <!-- {%- assign has_metadata = project.topics.size > 0 and project.description != null and project.description != "" -%} -->
         {%- assign has_metadata = project.topics.size > 0 -%}
         <!-- {%- assign has_metadata = project.topics.size > 0 or project.description -%} -->
-        {%- if has_metadata != true -%}
+        <!-- {%- if has_metadata != true -%} -->
         <!-- {%- break -%} -->
-        {%- endif -%}
+        <!-- {%- endif -%} -->
 
         {%- assign project_type  = "remote" -%}
         {%- assign project_id    = project.name -%}
