@@ -16,8 +16,8 @@
           {%- endfor -%}
         {%- endcapture -%}
 
-        {%- assign has_metadata = project.topics.size > 0 and project.description -%}
-        {%- if has_metadata != true -%}
+        {%- assign has_metadata = project.topics.size > 0 and project.description != blank -%}
+        {%- if has_metadata == false -%}
         {%- break -%}
         {%- endif -%}
 
