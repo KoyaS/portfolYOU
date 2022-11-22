@@ -19,6 +19,9 @@
         <!-- {%- assign has_metadata = project.topics.size > 0 and project.description != null and project.description != "" -%} -->
         {%- assign has_metadata = project.topics.size > 0 -%}
         <!-- {%- assign has_metadata = project.topics.size > 0 or project.description -%} -->
+        {%- if has_metadata != true -%}
+        {%- break -%}
+        {%- endif -%}
 
         {%- assign project_type  = "remote" -%}
         {%- assign project_id    = project.name -%}
@@ -30,10 +33,7 @@
         {%- assign project_url   = project.html_url -%}
         {%- assign project_tools = project.topics -%}
         {%- assign open_new_tab  = page.remote_open_new_tab -%}
-
-        {%- if has_metadata -%}
         {% include projects/project-card.html %}
-        {%- endif -%}
 
       {%- endif -%}
 
