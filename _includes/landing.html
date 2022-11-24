@@ -12,6 +12,9 @@
     {% if site.description != null and site.description != "" %}
       <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
     {% endif %}
+      {%- if site.social_in_header -%}
+      {% include social.html %}
+      {%- endif -%}
 
   </div>
 </div>
