@@ -20,17 +20,17 @@
         {%- assign project_id    = project.name -%}
         {%- assign project_img = false -%}
 
-        {%- assign possible_project_gif_path = "assets/" | append: project.name | append: '.jpg' -%}
+        {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%}
         {% for static_file in site.static_files %}
-            {% if static_file.path == "assets/" | append: project.name | append: '.jpg' %}
+            {% if static_file.path == test_path %}
                 {% assign jpg_exists = true %}
             {% endif %}
         {% endfor %}
 
         {% if jpg_exists %}
-          {%- assign possible_project_gif_path = "assets/" | append: project.name | append: '.jpg' -%}
+          {%- assign possible_project_gif_path = "assets/" | append: project.name | append: '.gif' -%}
         {% else %}
-          {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.gif' -%}
+          {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.jpg' -%}
         {% endif %}
         
         
