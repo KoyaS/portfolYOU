@@ -20,14 +20,22 @@
         {%- assign project_id    = project.name -%}
         {%- assign project_img = false -%}
 
-        {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%}
-        {% for static_file in site.static_files %}
+        <!-- {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%} -->
+        <!-- {% for static_file in site.static_files %}
             {% if static_file.path == test_path %}
                 {% assign jpg_exists = true %}
             {% else %}
                 {% assign jpg_exists = false %}
             {% endif %}
-        {% endfor %}
+        {% endfor %} -->
+
+        {% loop_directory directory:assets iterator:image filter:*.jpg sort:descending %}
+          {% if static_file.path == test_path %}
+              {% assign jpg_exists = true %}
+          {% else %}
+              {% assign jpg_exists = false %}
+          {% endif %}
+        {% endloop_directory %}
 
         {% if jpg_exists %}
           {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.jpg' -%}
