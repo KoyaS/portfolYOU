@@ -24,6 +24,8 @@
         {% for static_file in site.static_files %}
             {% if static_file.path == test_path %}
                 {% assign jpg_exists = true %}
+            {% else %}
+                {% assign jpg_exists = false %}
             {% endif %}
         {% endfor %}
 
