@@ -29,13 +29,21 @@
             {% endif %}
         {% endfor %} -->
 
-        {% loop_directory directory:assets iterator:image filter:*.jpg sort:descending %}
+        <!-- {% loop_directory directory:assets iterator:image filter:*.jpg sort:descending %}
           {% if static_file.path == test_path %}
               {% assign jpg_exists = true %}
           {% else %}
               {% assign jpg_exists = false %}
           {% endif %}
-        {% endloop_directory %}
+        {% endloop_directory %} -->
+
+        <ul>
+          {% for post in site.static_files %}
+            <li>
+              <p>{{static_file.path}}</p>
+            </li>
+          {% endfor %}
+        </ul>
 
         {% if jpg_exists %}
           {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.jpg' -%}
