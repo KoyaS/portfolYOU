@@ -21,6 +21,7 @@
         {%- assign project_img = false -%}
 
         {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%}
+        <p>test_path</p>
         {% for static_file in site.static_files %}
             {% if static_file.path == test_path %}
                 {% assign jpg_exists = true %}
@@ -29,6 +30,15 @@
                 {% assign jpg_exists = false %}
             {% endif %}
         {% endfor %}
+
+        <ul>
+          {% for static_file in site.static_files %}
+            <li>
+              <p>{{static_file.path}}</p>
+            </li>
+          {% endfor %}
+        </ul>
+
 
         {% if jpg_exists %}
           {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.jpg' -%}
