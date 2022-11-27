@@ -20,7 +20,7 @@
         {%- assign project_id    = project.name -%}
         {%- assign project_img = false -%}
 
-        {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%}
+        {%- assign test_path = "/assets/" | append: project.name | append: '.jpg' -%}
         <p>{{test_path}}</p>
         {% for static_file in site.static_files %}
             {% if static_file.path == test_path %}
