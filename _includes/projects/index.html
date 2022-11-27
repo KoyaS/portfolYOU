@@ -20,6 +20,7 @@
         {%- assign project_id    = project.name -%}
         {%- assign project_img = false -%}
         {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.jpg' -%}
+        {%- assign possible_project_img_path = "assets/" | append: project.name | append: '.gif' -%}
         {%- assign project_img = possible_project_img_path -%}
         {%- assign project_name  = titlecase | strip -%}
         {%- assign project_desc  = project.description -%}
