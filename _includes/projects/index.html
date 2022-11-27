@@ -29,14 +29,6 @@
             {% endif %}
         {% endfor %} -->
 
-        <!-- {% loop_directory directory:assets iterator:image filter:*.jpg sort:descending %}
-          {% if static_file.path == test_path %}
-              {% assign jpg_exists = true %}
-          {% else %}
-              {% assign jpg_exists = false %}
-          {% endif %}
-        {% endloop_directory %} -->
-
         <ul>
           {% for post in site.static_files %}
             <li>
