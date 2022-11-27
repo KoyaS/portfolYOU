@@ -21,7 +21,7 @@
         {%- assign project_img = false -%}
 
         {%- assign test_path = "assets/" | append: project.name | append: '.jpg' -%}
-        <p>test_path</p>
+        <p>{{test_path}}</p>
         {% for static_file in site.static_files %}
             {% if static_file.path == test_path %}
                 {% assign jpg_exists = true %}
